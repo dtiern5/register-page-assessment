@@ -1,0 +1,59 @@
+body {
+  text-align: center;
+  font-family: "Garamond", serif;
+}
+
+label,
+input {
+  display: block;
+}
+
+select {
+    margin-bottom: 16px;
+}
+
+.top-container {
+  position: relative;
+  padding-top: 20vh;
+}
+
+.middle-container {
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.left-text-box {
+  max-width: 30%;
+  margin: 0px 12px;
+  padding: 3px 12px;
+  text-align: left;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: lightgray;
+  position: absolute;
+  left: 5%;
+}
+
+.register-container {
+  text-align: left;
+}
+
+#reference-div {
+    padding-bottom: 12px;
+}
+
+#error-name, #error-email {
+  color: red;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  .left-text-box {
+    position: relative;
+    left: 0;
+    max-width: 50%;
+  }
+}

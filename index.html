@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body onload="getReferrers()">
+    <div class="top-container">
+      <h1>Join the Revisor's Office today!</h1>
+    </div>
+    <div class="middle-container">
+      <div class="left-text-box">
+        <p>
+          The Revisor's Office is a nonpartisan office of the Minnesota
+          Legislature. The office provides confidential drafting services of
+          legislative and administrative documents. Since its founding in 1939,
+          the office has served as the compiler of Minnesota Statutes and is the
+          official publisher of Minnesota Statutes, Laws, and Rules.
+        </p>
+      </div>
+      <div class="register-container">
+        <form
+          id="register-form"
+          class="column"
+          action="http://localhost:3000/submit"
+          method="POST"
+        >
+          <div class="name-div">
+            <label for="name" class="first-label">Name (required)</label>
+            <input
+              id="name-input"
+              type="text"
+              class="name"
+              name="name"
+              maxlength="100"
+              pattern="[A-Za-z '-]{1,100}$"
+              onchange="checkName(this.value)"
+              required
+            />
+            <div id="error-name" for="name">Invalid Name</div>
+          </div>
+          <div class="email-div">
+            <label for="email">Email (required)</label>
+            <input
+              type="email"
+              name="email"
+              onchange="checkEmail(this.value)"
+              required
+            />
+            <span id="error-email">Invalid Email</span>
+          </div>
+          <div id="reference-div">
+            <label for="referrer">Referrer:</label>
+            <select
+              id="selectID"
+              name="referrer"
+              onchange="checkSelect(this.value)"
+            >
+              <option value="" selected>Select Person</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <input type="submit" value="Sign Up!" />
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
